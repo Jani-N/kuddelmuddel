@@ -1,8 +1,12 @@
-import React from 'react';
+import React=require("react");
 
-export default function PlayerView() {
+export interface PlayerViewProbs {
+  firstname: string,
+  middlenames?: string[],
+  lastname: string
+}
 
-    const player = this.props.player;
+export default function PlayerView({firstname, middlenames = [], lastname}: PlayerViewProbs) {
 
     return (
 
@@ -10,9 +14,13 @@ export default function PlayerView() {
 
         <div className="fullName">
 
-          <span  className="surname">
+          <span className="firstname">
+            {firstname}
           </span>
 
+          <span className="lastname">
+            {lastname}
+          </span>
 
         </div>
 
